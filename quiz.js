@@ -49,7 +49,7 @@ function treeBuild(sym, hgt){
   console.log("Function arguments: " + sym + " " + hgt); // check to see if obj pass arguments
   var line = sym;
   var spacer = " ";
-  var j = (hgt - 2);
+  var j = hgt;
   for(var i = 0; i < hgt; i++){
     j -= 1;
     console.log(spacer.repeat(j) + line.repeat(i));
