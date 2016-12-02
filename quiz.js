@@ -32,21 +32,41 @@ If either of the input fields does not have a value in it when the user presses 
 var button = document.getElementById("grow");
 var treeData = {}; // object that holds symbol and height
 /*------- Listeners -------*/
-button.addEventListener("click", treeBuild);// button listener
+button.addEventListener("click", getData);// button listener
 /*------- Function -------*/
-function treeData(symbol, height) {
-    this.symbolTree = symbol;
-    this.heightTree = height;
-}
-function treeBuild(){
+function getData(){
   var symbol = document.getElementById("symbol").value;
-  treeData.symbolTree = symbol;
   var height = document.getElementById("height").value;
-  treeData.symbolHeight = height;
-  console.log("Can you read this? " + symbol + " " + height);
-  console.log(treeData);
+  treeData.symbol = symbol;
+  treeData.height = height;
+  console.log("Inputted data: " + symbol + " " + height);
+  console.log(treeData); // see if object is set up
+  treeBuild(symbol, height); // pass object.symbol and .height to treeBuild
+}
+function treeBuild(sym, hgt){
+  console.log("Function arguments: " + sym + " " + hgt); // check to see if obj pass arguments
 }
 
-//pass symbol and height to an obj (2 key/value pairs)
+//sort symbols for If not statement....come back to
+//pass symbol and height to an obj (2 key/value pairs)....complete
 //pass that object as argument value to function
 //add event listener to call treeBuild, for enter key while one of the input fields has focus.
+
+/*-------- Thinking Lines Below --------------*/
+
+/*=========== There be Dragons here ===================*/
+// function treeData(symbol, height) {
+//     var symbol = document.getElementById("symbol").value;
+    // if ( symbol.value !== /^[\w&.\-]+$/ ){
+//     //   alert("Please enter one # or @");
+//     //   // return;
+//     // }
+//     var height = document.getElementById("height").value;
+//     // if(height !== "3"||"4"||"5"||"6"||"7"||"8"||"9"||"10"||"11"||"12"||"13"||"14"||"15"){
+//     //   alert("Please enter one number, 3 - 15")
+//     // }
+//     this.symbolTree = symbol;
+//     this.heightTree = height;
+//     console.log("Can you read this? " + symbol + " " + height);
+//     console.log(treeData);
+// }
