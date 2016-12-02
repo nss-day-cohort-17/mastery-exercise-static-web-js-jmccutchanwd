@@ -1,9 +1,8 @@
 /*--- John McCutchan ---*/
 /* Built with Bootstrap, mobile first */
 /*============ Structure ===============*/
-body{
-  /*min-height: 300px;
-  margin-bottom: 50px;*/ /* Sticky Footer */
+.containerHeight{
+  height: 800px;
 }
 header{
   height: 150px;
@@ -24,9 +23,8 @@ fieldset{
   margin: 0 2px;
 }
 legend.scheduler-border {
-    width:auto;
-    padding:0 10px;
-    border-bottom:none;
+  width:auto;
+  padding:0 10px;
 }
 legend{
   width: inherit;
@@ -38,25 +36,49 @@ button{
   margin-top: 20px;
 }
 .border{
-  border: 2px solid rgba(192, 57, 43,0.6);
   height: 300px;
-  margin-top:10px;
+  margin:10px 0;
+}
+#displayTree{
+  height:300px;
+}
+footer{
+  height:50px;
+  position: absolute;
+  bottom:0;
 }
 /*============ Structure END ===========*/
 /*============ Skin ====================*/
+body{
+  background-color: black;
+}
+.container{
+  background-color: white;
+}
 header{
-  background-color: rgba(39, 174, 96,1.0);
+  background-color: rgba(17, 110, 63,1.0);
   color: rgba(255, 255, 255,1.0);
+}
+header h1{
+  font-family: Palatino;
+  letter-spacing: 3px;
+}
+.border{
+  border: 2px solid rgba(192, 57, 43,0.6);
 }
 fieldset{
   border: 1px solid silver;
+}
+legend.scheduler-border {
+  border-bottom:none;
 }
 legend{
   border:none;
   font-weight: bolder;
 }
 footer{
-  background-color: rgba(39, 174, 96,1.0);
+  background-color: rgba(17, 110, 63,1.0);
   color: rgba(255, 255, 255,1.0);
+  font-family: Palatino;
 }
 /*============ Skin END ================*/
