@@ -21,17 +21,17 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
+    <div class="container containerHeight">
       <div class="row">
-        <header class="col-md-12">
+        <header class="col-xs-12">
           <h1>Christmas Tree</h1>
         </header>
         <section>
-          <div class="col-md-6">
+          <div class="col-sm-6">
             <form>
               <fieldset class="fieldset">
                 <legend>Build It</legend>
-                <div class="row-fluid">
+                <div>
                   <label>Enter A Symbol:</label>
                   <br>
                   <input type="number" name="inputTemp" id="inputTemp">
@@ -47,10 +47,17 @@
               </fieldset>
             </form>
           </div>
-          <div class="col-md-6 border">
-            <div id="displayTree"></div>
+          <div class="col-sm-6">
+            <div id="displayTree" class="border"></div>
           </div>
         </section>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <footer class="col-xs-12">
+          <h4>&copy; John McCutchan 2016</h4>
+        </footer>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
