@@ -1,0 +1,62 @@
+/*--- John McCutchan ---*/
+/* Built with Bootstrap, mobile first */
+/*============ Structure ===============*/
+body{
+  /*min-height: 300px;
+  margin-bottom: 50px;*/ /* Sticky Footer */
+}
+header{
+  height: 150px;
+}
+h1{
+  line-height: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+section{
+  height: 320px;
+}
+form{
+  margin-top: 50px;
+}
+fieldset{
+  padding: .35em .625em .75em;
+  margin: 0 2px;
+}
+legend.scheduler-border {
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
+}
+legend{
+  width: inherit;
+}
+label:nth-of-type(2){
+  margin-top: 10px;
+}
+button{
+  margin-top: 20px;
+}
+.border{
+  border: 2px solid rgba(192, 57, 43,0.6);
+  height: 300px;
+  margin-top:10px;
+}
+/*============ Structure END ===========*/
+/*============ Skin ====================*/
+header{
+  background-color: rgba(39, 174, 96,1.0);
+  color: rgba(255, 255, 255,1.0);
+}
+fieldset{
+  border: 1px solid silver;
+}
+legend{
+  border:none;
+  font-weight: bolder;
+}
+footer{
+  background-color: rgba(39, 174, 96,1.0);
+  color: rgba(255, 255, 255,1.0);
+}
+/*============ Skin END ================*/
