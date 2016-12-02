@@ -31,6 +31,7 @@ If either of the input fields does not have a value in it when the user presses 
 /*------- Global -------*/
 var button = document.getElementById("grow");
 var treeData = {}; // object that holds symbol and height
+var tree = "";
 /*------- Listeners -------*/
 button.addEventListener("click", getData);// button listener
 /*------- Function -------*/
@@ -45,7 +46,18 @@ function getData(){
 }
 function treeBuild(sym, hgt){
   console.log("Function arguments: " + sym + " " + hgt); // check to see if obj pass arguments
+  var line = "";
+  for(var i = 0; i < hgt; i++){
+    line += sym;
+    console.log(line);
+    tree += "<li>" + line + "</li>";
+  }
+  var result = document.getElementById("displayTree");
+  result.innerHTML = tree;
 }
+// "%c text",
+// "background: green; color: yellow; font-size: x-large; text-align: center");
+
 
 //sort symbols for If not statement....come back to
 //pass symbol and height to an obj (2 key/value pairs)....complete
