@@ -29,11 +29,11 @@ an event listener for the enter/return key.
 If either of the input fields does not have a value in it when the user presses the enter key, or presses the button, then display an alert stating that both fields must have a value.
 */
 /*------- Global -------*/
-var button = document.getElementById("grow");
+var button = document.getElementById("grow"); // grow your tree button
 var treeData = {}; // object that holds symbol and height
-var tree = "";
+var tree = ""; // holder to drop lines in for page
 /*------- Listeners -------*/
-button.addEventListener("click", getData);// button listener
+button.addEventListener("click", getData);// grow your tree button listener
 /*------- Function -------*/
 function getData(){
   var symbol = document.getElementById("symbol").value;
@@ -44,19 +44,28 @@ function getData(){
   console.log(treeData); // see if object is set up
   treeBuild(symbol, height); // pass object.symbol and .height to treeBuild
 }
+//
 function treeBuild(sym, hgt){
   console.log("Function arguments: " + sym + " " + hgt); // check to see if obj pass arguments
-  var line = "";
+  var line = sym;
+  var spacer = " ";
+  var j = (hgt - 2);
   for(var i = 0; i < hgt; i++){
-    line += sym;
-    console.log(line);
-    tree += "<li>" + line + "</li>";
+    j -= 1;
+    console.log(spacer.repeat(j) + line.repeat(i));
+    tree += "<li>" + line.repeat(i) + "</li>";
   }
   var result = document.getElementById("displayTree");
   result.innerHTML = tree;
+  console.log("%c MerryChristmas ", "background: green; color: yellow; font-size: x-large; text-align: center");
 }
+
 // "%c text",
 // "background: green; color: yellow; font-size: x-large; text-align: center");
+
+//If either of the input fields does not have a value in it when the user presses
+//the enter key, or presses the button, then display an alert stating that both
+//fields must have a value.
 
 
 //sort symbols for If not statement....come back to
