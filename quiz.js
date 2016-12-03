@@ -32,11 +32,12 @@ If either of the input fields does not have a value in it when the user presses 
 var button = document.getElementById("grow"); // grow your tree button
 var treeData = {}; // object that holds symbol and height
 var tree = ""; // holder to drop lines in for page
+var spacer = " ";
 /*------- Listeners -------*/
 button.addEventListener("click", getData);// grow your tree button listener
 /*------- Function -------*/
 function getData(){
-  var symbol = document.getElementById("symbol").value;
+  var symbol = document.getElementById("symbol").value + " ";
   var height = document.getElementById("height").value;
   treeData.symbol = symbol;
   treeData.height = height;
@@ -44,21 +45,42 @@ function getData(){
   console.log(treeData); // see if object is set up
   treeBuild(symbol, height); // pass object.symbol and .height to treeBuild
 }
-//
-function treeBuild(sym, hgt){
-  console.log("Function arguments: " + sym + " " + hgt); // check to see if obj pass arguments
-  var line = sym;
-  var spacer = " ";
-  var j = hgt;
-  for(var i = 0; i < hgt; i++){
-    j -= 1;
-    console.log(spacer.repeat(j) + line.repeat(i));
-    tree += "<li>" + line.repeat(i) + "</li>";
-  }
-  var result = document.getElementById("displayTree");
-  result.innerHTML = tree;
-  console.log("%c MerryChristmas ", "background: green; color: yellow; font-size: x-large; text-align: center");
+function treeBuild(symbol, height) {
+    var conResult = "";
+    var htmlResult = "";
+    var spacer = " ";
+    var i = 0;
+    var j = height;
+    do {
+      i += 1;
+      j -= 1;
+      conResult = spacer.repeat(j) + symbol.repeat(i);
+      htmlResult += "<li>" + symbol.repeat(i) + "</li>";
+      document.getElementById("displayTree").innerHTML = htmlResult;
+      console.log(conResult)
+      console.log(spacer);
+} while (i < height);
+;
 }
+ // var i = 1; i < height + 1; i++;
+ //    var j = height;
+ //    var line = spacer.repeat(j) + symbol.repeat(i);
+ //    console.log(line);
+//
+// function treeBuild(sym, hgt){
+//   console.log("Function arguments: " + sym + " " + hgt); // check to see if obj pass arguments
+//   var line = sym;
+//   var spacer = " ";
+//   var j = hgt;
+//   for(var i = 0; i < hgt; i++){
+//     j -= 1;
+//     console.log(spacer.repeat(j) + line.repeat(i));
+//     tree += "<li>" + line.repeat(i) + "</li>";
+//   }
+//   var result = document.getElementById("displayTree");
+//   result.innerHTML = tree;
+//   console.log("%c MerryChristmas ", "background: green; color: yellow; font-size: x-large; text-align: center");
+// }
 
 // "%c text",
 // "background: green; color: yellow; font-size: x-large; text-align: center");
