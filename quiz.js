@@ -7,17 +7,16 @@
 * 1: A nested for() loop will not build this tree. It is best for cycling through an array[]
 * or obj(), and than cycling through an array that is nested inside.
 *
-* 2. The Do While loop runs one loop limeter, but allows multiple timers to run inside
+* 2. The Do While loop runs one loop limiter, but allows multiple timers to run inside
 * the loop. This allows one timer to count down at the same time as the main one counts up.
-* Thing to watch is that the the two hit their end at the same time, otherwise it errors.
+* The thing to watch is that the the two hit their end at the same time, otherwise it errors.
 *
 * 3. Enter key validation and field focus.
 *
-* 4. A obj.value acts like a strin when you try to use JavaScript Arithmetic Operators on it.
+* 4. A obj.value acts like a string when you try to use JavaScript Arithmetic Operators on it.
 * It is best to declare a new variable and put the var for the object in a Number() and
 * than act on it. Example: var modCounter = Number(hgt) + 7; ...where hgt is the value of a
 * number in an obj().
-*
 */
 /* +++++++++++++++++++++++++ Start JS +++++++++++++++++++++++ */
 /*============================*/
@@ -43,16 +42,15 @@ window.addEventListener('keypress', function (e) { // added enter key listener
 /*=====================*/
 function checkFields() { /* ======= Field Validation ====== */
   var check = document.getElementById("symbol").value; // looks in input assigns value to check
-  var check2 = document.getElementById("height").value; // looks in input and assigns value to check 2
+  var check2 = document.getElementById("height").value; // looks in input and assigns value to check2
   if (check == '' || check == null || check2 == '' || check2 == null) { // checks values against conditions
-    console.log("check contents" + check + check2); // shows values in console
-    alert("Please fill in the fields first."); // Polite message to fill int he blanks.
+    alert("Please fill in the fields first."); // Polite message to fill in the blanks.
   }else{
     getData(); // calls getData
   }
 } /* ==== End checkFields() ==== */
 function getData(){ /* ===== Pulls Data From <Input> fields==== */
-  var symbol = document.getElementById("symbol").value + " "; // gets sybol from html adds 1 space
+  var symbol = document.getElementById("symbol").value + " "; // gets symbol from html adds 1 space
   var height = document.getElementById("height").value; // gets height from html
   treeData.symbol = symbol; // passes symbol and it's value into obj treeData()
   treeData.height = height; // passes height and it's value into obj treeData()
@@ -60,8 +58,8 @@ function getData(){ /* ===== Pulls Data From <Input> fields==== */
   treeBuild(treeData.symbol, treeData.height); // pass object.symbol and .height to treeBuild
 } /* ==== End getData() ==== */
 function treeBuild(sym, hgt) { /* ==== Builds Tree, pass treeData.symbol, treeData.height ==== */
-  var conResult = ""; // emtpy container to hold console line
-  var htmlResult = ""; // empty container to hold html line
+  var conResult = ""; // emtpy container to hold console line of code
+  var htmlResult = ""; // empty container to hold html line of code
   var spacer = " "; // empty space that serves as spacer
   var modCounter = Number(hgt) + 7; // turns hgt into a number and adds 7
   var i = 1; // symbol counter
