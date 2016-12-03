@@ -34,8 +34,19 @@ var treeData = {}; // object that holds symbol and height
 var tree = ""; // holder to drop lines in for page
 var spacer = " ";
 /*------- Listeners -------*/
-button.addEventListener("click", getData);// grow your tree button listener
+button.addEventListener("click", checkFields);// grow your tree button listener
 /*------- Function -------*/
+function checkFields(){
+  console.log("check fields fired");
+  var check = document.getElementById("symbol").value;
+  var check2 = document.getElementById("height").value;
+  if (check == '' || check == null || check2 == '' || check2 == null) {
+    console.log("check contents" + check);
+    alert("Please fill in the fields first.");
+  }else{
+    getData();
+  }
+}
 function getData(){
   var symbol = document.getElementById("symbol").value + " ";
   var height = document.getElementById("height").value;
@@ -60,5 +71,5 @@ function treeBuild(sym, hgt) { // pass treeData.symbol, treeData.height
       j -= 2; // spacer counter
 } while (i < modCounter); // loop limiter
 console.log("Loop Limiter: " + modCounter); // **** test data **** displays loop limiter ****
-console.log('%c', 'padding:150px 200px; margin-left: 200px; margin-top: 200px; background:url(/grumpyoctocat.png) no-repeat;');
+console.log('%c', 'padding:150px 200px; margin-top: 200px; margin-left: 250px; background:url(http://vignette4.wikia.nocookie.net/habitrpg/images/6/61/Octocat.png/revision/latest?cb=20140206004650) no-repeat;');
 }
