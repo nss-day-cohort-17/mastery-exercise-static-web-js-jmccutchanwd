@@ -34,7 +34,13 @@ var treeData = {}; // object that holds symbol and height
 var tree = ""; // holder to drop lines in for page
 var spacer = " ";
 /*------- Listeners -------*/
-button.addEventListener("click", checkFields);// grow your tree button listener
+button.addEventListener("click", checkFields); // grow your tree button listener
+window.addEventListener('keypress', function (e) { // added enter key listener
+  if ((e.keyCode == 13) && (document.querySelector("input").focus() !== null)) {
+    console.log("just hit enter" + document.activeElement);
+    checkFields();
+  }
+});
 /*------- Function -------*/
 function checkFields(){
   console.log("check fields fired");
