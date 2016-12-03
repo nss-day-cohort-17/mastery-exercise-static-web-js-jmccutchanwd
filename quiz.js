@@ -55,9 +55,10 @@ function treeBuild(sym, hgt) { // pass treeData.symbol, treeData.height
       conResult = spacer.repeat(j) + sym.repeat(i); // builds line for console
       htmlResult += "<li>" + sym.repeat(i) + "</li>"; // returns tree to html
       document.getElementById("displayTree").innerHTML = htmlResult; // builds line for html
-      console.log(conResult); // renders tree in console
+      console.log("%c" + conResult, "color: rgba(17, 110, 63,1.0);"); // renders tree in console
       i += 2; // symbol counter
       j -= 2; // spacer counter
 } while (i < modCounter); // loop limiter
 console.log("Loop Limiter: " + modCounter); // **** test data **** displays loop limiter ****
+console.log('%c', 'padding:150px 200px; margin-left: 200px; margin-top: 200px; background:url(/grumpyoctocat.png) no-repeat;');
 }
